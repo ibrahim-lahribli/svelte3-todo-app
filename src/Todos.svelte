@@ -1,5 +1,5 @@
 <script>
-  import TodoItem from "./TodoItem";
+  import TodoItem from "./TodoItem.svelte";
   let newTodoTitle = "";
   let currentFilter = "all";
   let nextId = 4;
@@ -23,7 +23,8 @@
   ];
 
   function addTodo(event) {
-    if (event.key === "enter") {
+    console.log(event);
+    if (event.key === "Enter") {
       todos = [
         ...todos,
         {
@@ -55,7 +56,8 @@
   }
 
   function clearCompleted() {
-    todos.filter(todo => !todo.completed);
+    todos.forEach(todo => (todo.completed = false));
+    todos = todos;
   }
 
   function handleDeleteTodo(event) {
@@ -84,7 +86,7 @@
   .logo {
     display: block;
     margin: 20px auto;
-    width: 50%;
+    width: 10%;
   }
   .todo-input {
     width: 100%;
@@ -108,11 +110,20 @@
     appearance: none;
     background-color: white;
   }
+  .active {
+    background-color: aqua;
+  }
+  .inner-container-buttons {
+    width: 100%;
+  }
+  .button-clear-completed {
+    float: right;
+  }
 </style>
 
 <div class="container">
   <a href="https://google.com" target="blank">
-    <img src={'/img/test.png'} alt="svelte logo" class="logo" />
+    <img src={'favicon.png'} alt="svelte logo" class="logo" />
   </a>
 
   <h2>Svelte todo App</h2>
@@ -144,7 +155,7 @@
   </div>
 
   <div class="inner-container">
-    <div>
+    <div class="inner-container-buttons">
       <button
         on:click={() => updateFilter('all')}
         class:active={currentFilter === 'all'}>
@@ -161,7 +172,9 @@
         Completed
       </button>
 
-      <button on:click={clearCompleted}>Clear Completed</button>
+      <button on:click={clearCompleted} class="button-clear-completed">
+        Clear Completed
+      </button>
 
     </div>
   </div>
