@@ -1,27 +1,31 @@
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# Todo App created With Sevelte version 3
+my First App with svelte based on (https://medium.com/codingthesmartway-com-blog/building-a-svelte-3-todo-app-from-start-to-deployment-1737f72c23a6)
 
----
+i worked with local storage
+the app implement : 
+  -list todos
+  -add new item (todo)
+  -remove item (todo)
+  -check item as completed / uncheck
+  -filter list by completed/active/all
+  -clear completed 
 
-# svelte app
+# tech Stack 
+Svelte 3
+Components
+Styling via CSS
+ES 6 syntax
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
+# version live
+to play with the app (https://svelte3-todo-app.now.sh/)
+i use @zeit for deployment
 
 ## Get started
 
 Install the dependencies...
 
 ```bash
-cd svelte-app
+cd svelte-todo
 npm install
 ```
 
