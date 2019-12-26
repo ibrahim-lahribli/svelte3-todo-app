@@ -37,7 +37,7 @@
       nextId = nextId + 1;
     }
   }
-  $: todosReamining = filteredTodos.filter(todo => !todo.completed).length;
+  $: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
   $: filteredTodos =
     currentFilter === "all"
       ? todos
@@ -75,6 +75,40 @@
     ];
   }
 </script>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 10px auto;
+  }
+  .logo {
+    display: block;
+    margin: 20px auto;
+    width: 50%;
+  }
+  .todo-input {
+    width: 100%;
+    padding: 10px, 20px;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    border-top: 1px solid lightgray;
+    margin-bottom: 13px;
+  }
+  .inner-container-input {
+    margin-right: 12px;
+  }
+  button {
+    font-size: 15px;
+    appearance: none;
+    background-color: white;
+  }
+</style>
 
 <div class="container">
   <a href="https://google.com" target="blank">
